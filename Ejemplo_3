@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EJEMPLO_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<string> nombres = new List<string>();
+
+            nombres.Add("Carlos");
+            nombres.Add("Ana");
+            nombres.Add("Luis");
+            nombres.Add("Marta");
+
+            Console.WriteLine("Lista de nombres:");
+            foreach (string nombre in nombres)
+            {
+                Console.WriteLine("- " + nombre);
+            }
+
+            Console.Write("\nBuscar nombre: ");
+            string buscar = Console.ReadLine();
+            if (nombres.Contains(buscar))
+            {
+                Console.WriteLine($"{buscar} está en la lista.");
+            }
+            else
+            {
+                Console.WriteLine($"{buscar} no se encuentra.");
+            }
+
+            Console.WriteLine("Presiona una tecla para salir...");
+            Console.ReadKey();
+        }
+    }
+
+}

@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EJEMPLO_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingresa la nota del alumno (0 a 20): ");
+            int nota;
+
+            bool esValida = int.TryParse(Console.ReadLine(), out nota);
+
+            if (!esValida || nota < 0 || nota > 20)
+            {
+                Console.WriteLine("Error: La nota debe estar entre 0 y 20.");
+            }
+            else
+            {
+                if (nota >= 12)
+                {
+                    Console.WriteLine("¡Aprobado! ¡Felicidades!");
+                }
+                else
+                {
+                    Console.WriteLine("Desaprobado. Sigue esforzándote.");
+                }
+            }
+
+            Console.WriteLine("Presiona una tecla para salir...");
+            Console.ReadKey();
+        }
+    }
+    
+}

@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EJEMPLO_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            try
+            {
+                Console.Write("Ingresa el numerador: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Ingresa el denominador: ");
+                int den = Convert.ToInt32(Console.ReadLine());
+
+                double resultado = (double) num / den;
+                Console.WriteLine($"Resultado: {resultado}");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Error: No se puede dividir entre cero.");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Ingresa solo números válidos.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ocurrió un error inesperado: " + ex.Message);
+            }
+            Console.WriteLine("Presiona una tecla para salir...");
+            Console.ReadKey();
+        }
+    }
+    
+}
